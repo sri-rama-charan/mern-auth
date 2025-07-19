@@ -6,6 +6,7 @@ import cors from 'cors'
 import authRouter from './routes/authRoutes.js';
 //import userRouter from './routes/userRouter.js';
 import connectDB  from './config/mongodb.js';
+import userRouter from './routes/userRoutes.js';
 
 
 const app = express();
@@ -26,6 +27,7 @@ app.get("/", (req,res)=>{
 })
 //auth-routers
 app.use("/api/auth", authRouter);
+app.use("/api/user", userRouter);
 
 //user-router
 //app.use("/api/user", userRouter);
