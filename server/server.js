@@ -11,10 +11,10 @@ import userRouter from './routes/userRoutes.js';
 
 const app = express();
 
-
-app.use(cors({
-//    origin:[process.env.FRONTEND_URL],
-  //  methods:["GET","POST","PUT","DELETE"],
+const allowedOrigins = ['http://localhost:5173']; // Adjust this to your frontend URL
+app.use(cors({                                      //it is used to allow cross-origin requests
+    origin: allowedOrigins,
+//  methods:["GET","POST","PUT","DELETE"],
     credentials: true,
 }));
 
